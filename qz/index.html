@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    @font-face {
+      font-family: Gotham Rounded;
+      src: url("font.otf") format("opentype");
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      font-family: Gotham Rounded;
+    }
+    body {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background: url("fundo.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .container {
+      width: 700px;
+      max-width: 90%;
+    }
+    .black {
+      background-color: white;
+      padding: 10px;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0 0 10px 2px;
+    }
+    .answer {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 10px;
+    }
+    @media (max-width: 991px) {
+      .answer {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        gap: 10px;
+      }
+    }
+    .btn {
+      border-radius: 10px;
+      padding: 5px 10px;
+      font-size: 30px;
+      background-color: #f7ce6a;
+      outline: none;
+      text-decoration: none;
+      color: black;
+    }
+    .black h1 {
+      color: black;
+    }
+    .black p {
+      font-size: 18px;
+    }
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+<body> 
+  <div class="container">
+    <div class="black">
+      <div id="primeira">
+        <div class="question">
+          <h1>Pergunta 1</h1>
+          <p>¿De verdad quieres descubrir este secreto?</p>
+        </div>
+        <div class="answer">
+          <button class="btn" onclick="segunda()">SÍ</button>
+          <button class="btn" onclick="segunda()">NO</button>
+        </div>
+      </div>
+      <div id="segunda" class="hide">
+        <div class="question">
+          <h1>Pergunta 2</h1>
+          <p>¿Prometes no desvelarlo a nadie??</p>
+        </div>
+        <div class="answer">
+          <button class="btn" onclick="terceira()">SÍ</button>
+          <button class="btn" onclick="terceira()">NO</button>
+        </div>
+      </div>
+      <div id="terceira" class="hide">
+        <div class="question">
+          <h1>Pergunta 3</h1>
+          <p>El video informativo que verás a continuación tiene un límite de personas que pueden verlo al mismo tiempo. ¿Tienes intención de verlo hasta el final?</p>
+        </div>
+        <div class="answer">
+          <button class="btn" onclick="redirect()">SÍ</button>
+          <button class="btn" onclick="redirect()">NO</button>
+        </div>
+      </div>
+    </div>
+    <p style="text-align: center; font-weight: bold;">© 2022 – Todos los derechos reservados. Este sitio no es parte ni está respaldado por Facebook. Facebook es una marca registrada de Facebook, Inc.</p>
+    <p style="text-align: center; font-weight: bold;"><a href="https://proto-zerobarriga.site/termos" style="color: black;">Terminos de uso</a> | <a href="https://proto-zerobarriga.site/privacidade" style="color: black;">Política de Privacidad</a></p>
+  </div>
+  <script>
+    function segunda() {
+      document.getElementById("primeira").classList.add("hide")
+      document.getElementById("segunda").classList.remove("hide")
+    }
+    function terceira() {
+      document.getElementById("segunda").classList.add("hide")
+      document.getElementById("terceira").classList.remove("hide")
+    }
+    function redirect() {
+      location.href = "https://proto-zerobarriga.site" // SEU LINK AQUI
+    }
+  </script>
+</body>
+</html>
